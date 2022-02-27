@@ -1,0 +1,12 @@
+digraph G {
+  rankdir=LR
+  start -> OPEN [label=start];
+  OPEN -> CLOSE [label=close, color=green];
+  CLOSE -> OPEN [label=open, color=green];
+  CLOSE ->  LOCKED  [label="lock (ok)", color=green];
+  CLOSE ->  CLOSE [label="lock (fail)", color=red];
+  LOCKED ->  CLOSE [label="unlock (ok)", color=green];
+  LOCKED ->  LOCKED [label="unlock (fail)",color=red];
+  start [shape=point];
+}
+

@@ -1,0 +1,8 @@
+digraph G {
+  rankdir=LR
+  start -> OPEN [label=start];
+  OPEN -> CLOSE [label=close];
+  CLOSE -> OPEN [label=open];
+  start [shape=point];
+}
+

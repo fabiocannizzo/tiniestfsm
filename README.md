@@ -19,15 +19,7 @@ Let's consider a door, which can be in the two possible states *OPEN* and *CLOSE
 The possible events are *open* and *close*.
 The state transition diagram is shown here below.
 
-![Alt text](https://g.gravizo.com/svg?
-  digraph G {
-  rankdir=LR
-  start -> OPEN [label=start];
-  OPEN -> CLOSE [label=close];
-  CLOSE -> OPEN [label=open];
-  start [shape=point];
-  }
-)
+![](images/ex1.png)
 
 First we implement the events:
 
@@ -98,19 +90,7 @@ The possible events are *open*, *close*, *lock* and *unlock*.
 To lock or unlock the door the right key is required and the operation can fail if the key is not valid.
 The state transition diagram is shown here below.
 
-![Alt text](https://g.gravizo.com/svg?
-  digraph G {
-  rankdir=LR
-  start -> OPEN [label=start];
-  OPEN -> CLOSE [label=close];
-  CLOSE -> OPEN [label=open];
-  CLOSE ->  LOCKED  [label="lock (ok)"];
-  CLOSE ->  CLOSE [label="lock (fail)"];
-  LOCKED ->  CLOSE [label="unlock (ok)"];
-  LOCKED ->  LOCKED [label="unlock (fail)"];
-  start [shape=point];
-    }
-)
+![](images/ex2.png)
 
 We need two additional events:
 
